@@ -1,0 +1,11 @@
+.contact-wrapper {
+  width: 50%;
+}
+
+.contact-list {
+  list-style-type: none;
+}
+
+.absent-contact {
+  color: red;
+}
