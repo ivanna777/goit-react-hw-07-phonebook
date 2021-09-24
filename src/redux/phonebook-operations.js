@@ -1,5 +1,8 @@
 import axios from "axios";
 import {
+    fetchEntriesRequest,
+    fetchEntriesSuccess,
+    fetchEntriesError,
     handleSubmitRequest,
     handleSubmitSuccess,
     handleSubmitError,
@@ -9,6 +12,14 @@ import {
 
 } from "./phonebook-actions"
 
+// axios.defaults.baseURL = 'http://localhost:4040';
+
+export const fetchEntries = () => dispatch => {
+    dispatch(fetchEntriesRequest());
+    axios.get('http://localhost:4040/contacts')
+        .then(({data}) => dispatch(fetchEntriesSuccess(data)))
+        .catch(error => dispatch(fetchEntriesError(error.message)))
+}
 
 export const handleSubmit = name => dispatch => {
     const contact = {

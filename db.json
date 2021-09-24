@@ -2,14 +2,6 @@
   "contacts": [
     {
       "name": {
-        "name": "gdfgdf",
-        "number": "4534543"
-      },
-      "completed": false,
-      "id": 1
-    },
-    {
-      "name": {
         "name": "dfsdfsd",
         "number": "453433"
       },
@@ -64,6 +56,13 @@
         "number": "87756"
       },
       "id": 9
+    },
+    {
+      "name": {
+        "name": "rtgggcgcg",
+        "number": "655454658"
+      },
+      "id": 10
     }
   ]
 }

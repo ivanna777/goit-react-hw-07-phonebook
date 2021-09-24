@@ -1,10 +1,17 @@
+import { Component } from "react";
 import { connect } from "react-redux";
-import { deleteContact } from "../../redux/phonebook-operations";
+import {fetchEntries, deleteContact } from "../../redux/phonebook-operations";
 import {getFilterName} from "../../redux/phonebook-selectors";
 import styles from "./ContactList.module.css"
 
-const ContactList = ({entries, onDelete}) => {
+class ContactList extends Component {
+    componentDidMount() {
+    this.props.onFetchEntries();
+  }
+render() {
+    const {entries, onDelete} = this.props;
         return (
+            
             <div className={styles["contact-wrapper"]}>
                 <ul className={styles["contact-list"]}>
                         {entries.map(({id, name}) => (
@@ -24,18 +31,17 @@ const ContactList = ({entries, onDelete}) => {
                     </ul>  
             </div>
         )
+                        }
     }
 
-// const getFilterName = (entries, filterValue) => {
-//     return entries.filter(entry => entry.name.name.includes(filterValue));
-// }
 
 const mapStateToProps = (state) => ({
     entries: getFilterName(state)
 });
 
 const mapDispatchToProps = dispatch => ({
-    onDelete: e => dispatch(deleteContact(Number(e.target.dataset.id)))
+    onFetchEntries: () => dispatch(fetchEntries()),
+    onDelete:  e => dispatch(deleteContact(Number(e.target.dataset.id)))
 
 })
 

@@ -1,5 +1,9 @@
 import { createAction } from "@reduxjs/toolkit";
 
+export const fetchEntriesRequest = createAction('pnonebook/fetchEntriesRequest');
+export const fetchEntriesSuccess = createAction('pnonebook/fetchEntriesSuccess');
+export const fetchEntriesError = createAction('pnonebook/fetchEntriesError');
+
 export const handleSubmitRequest = createAction('pnonebook/handleSubmitRequest');
 export const handleSubmitSuccess = createAction('phonebook/handleSubmitSuccess');
 export const handleSubmitError = createAction('phonebook/handleSubmitError');
